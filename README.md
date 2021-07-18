@@ -2,7 +2,7 @@
 
 ## At First
 
-This idea comes from Nils Braun's [Article](https://nils-braun.medium.com/deploying-a-free-multi-user-browser-only-ide-in-just-a-few-minutes-d891f803224b) and [repo](https://github.com/nils-braun/codehub), where he intergrating the JupyterHub and Code-Server via the `KubeSpawner`
+This idea comes from [Nils Braun](https://github.com/nils-braun)'s [Article](https://nils-braun.medium.com/deploying-a-free-multi-user-browser-only-ide-in-just-a-few-minutes-d891f803224b) and [repo](https://github.com/nils-braun/codehub), where he intergrating the JupyterHub and Code-Server via the `KubeSpawner`
 
 His idea enlighted me that I can a kind of tunnel between JupyterHub and Code-Server:
 
@@ -29,7 +29,7 @@ default working directory for JupyterLab and vscode-server.
 
 Based on:
 
-- https://github.com/mikebirdgeneau/jupyterlab-docker
-- https://github.com/betatim/vscode-binder
-- https://github.com/jrderuiter/jupyterlab-vscode
+- [jupyterlab-docker](https://github.com/mikebirdgeneau/jupyterlab-docker)
+- [vscode-binder](https://github.com/betatim/vscode-binder)
+- jupyterlab-vscode(https://github.com/jrderuiter/jupyterlab-vscode)
 
