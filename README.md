@@ -31,5 +31,5 @@ Based on:
 
 - [jupyterlab-docker](https://github.com/mikebirdgeneau/jupyterlab-docker)
 - [vscode-binder](https://github.com/betatim/vscode-binder)
-- jupyterlab-vscode(https://github.com/jrderuiter/jupyterlab-vscode)
+- [jupyterlab-vscode](https://github.com/jrderuiter/jupyterlab-vscode)
 
