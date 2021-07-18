@@ -3,7 +3,7 @@ FROM python:3.7-slim
 ENV LANG=C.UTF-8
 
 # Install some basic utilities. (Change debain sourse list to https://mirrors.bfsue.du.cn)
-RUN sudo sed -i 's/deb.debian.org/mirrors.bfsu.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/deb.debian.org/mirrors.bfsu.edu.cn/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install -y apt-transport-https lsb-release curl gnupg git \
     && apt-get clean
