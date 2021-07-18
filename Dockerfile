@@ -34,17 +34,17 @@ RUN npm install -g configurable-http-proxy
 RUN pip install jupyterhub==1.4.2
 
 # Install proxy extension.
-RUN pip install jupyter-server-proxy==1.0.1 'tornado<6' \
+RUN pip install jupyter-server-proxy==1.0.1 \
     && jupyter serverextension enable --py jupyter_server_proxy \
     && jupyter labextension install jupyterlab-server-proxy \
     && jupyter lab build
 
 # Download and install VS Code server
 # NOTICE: github.com.cnpmjs.org is a reverse proxy for acclerate the release download
-RUN curl -L https://github.com.cnpmjs.org/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz -o code-server.tar.gz\
-    && tar xzf code-server.tar.gz \
-    && mv code-server-3.11.0-linux-amd64//code-server /usr/local/bin/ \
-    && rm -rf code-server.tar.gz \
+RUN curl -L -O https://github.com.cnpmjs.org/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz \
+    && tar xzf code-server-3.11.0-linux-amd64.tar.gz  \
+    && cp code-server-3.11.0-linux-amd64/code-server /usr/local/bin/code-server \
+    && rm -rf code-server-3.11.0-linux-amd64.tar.gz \
     && rm -rf code-server-3.11.0-linux-amd64/
 
 # Install the VS code proxy.
@@ -59,11 +59,6 @@ WORKDIR /work
 RUN cd /work \
     && jupyterhub --generate-config
 
-# Load the Local PAM(optional)
-RUN cp -f /jup_etc/passwd /etc/passwd \
-    && cp -f /jup_etc/shadow /etc/shadow \
-    && cp -f /jup_etc/group /etc/group
-
 # JupyterHub / JupyterLab (ENTRYPOINT ["jupyter", "lab"] && CMD ["--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"])
-ENTRYPOINT ["jupyterhub"]
-CMD ["--port=8.8.8.8"]
+ENTRYPOINT ["jupyter", "lab"]
+CMD ["--port=8888", "--ip=0.0.0.0", "--allow-root"]
