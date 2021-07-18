@@ -44,7 +44,7 @@ RUN pip install jupyter-server-proxy==1.0.1 'tornado<6' \
 RUN curl -L https://github.com.cnpmjs.org/cdr/code-server/releases/download/v3.11.0/code-server-3.11.0-linux-amd64.tar.gz -o code-server.tar.gz\
     && tar xzf code-server.tar.gz \
     && mv code-server-3.11.0-linux-amd64//code-server /usr/local/bin/ \
-    && rm -rf code-server.tar.gz 
+    && rm -rf code-server.tar.gz \
     && rm -rf code-server-3.11.0-linux-amd64/
 
 # Install the VS code proxy.
