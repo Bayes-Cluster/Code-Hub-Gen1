@@ -43,7 +43,5 @@ echo "-----------------------"
 echo "|install VS Code Prosy|"
 echo "-----------------------"
 jupyter labextension install @jupyterlab/server-proxy
-jupyter-vscode-proxy/ /etc/jupyter-vscode-proxy
-pip install /etc/jupyter-vscode-proxy
+pip install jupyter-vscode-proxy
 jupyter serverextension enable --py jupyter_server_proxy
-jupyter labextension install jupyterlab-server-proxy
