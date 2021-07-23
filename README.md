@@ -8,6 +8,12 @@ His idea enlighted me that I can a kind of tunnel between JupyterHub and Code-Se
 
 ## Installation 
 
+### Phyical Machine
+
+Run the `run.sh` with root privileges
+
+### Docker 
+
 ```
 sudo docker build -t terenceliu98/codehub .
 ```
@@ -20,6 +26,8 @@ sudo docker run --rm -p 8888:8888 terenceliu98/codehub
 
 Files/notebooks can be mounted into the `/work` directory, which is the
 default working directory for JupyterLab and vscode-server.
+
+
 
 ## Rendering:
 
