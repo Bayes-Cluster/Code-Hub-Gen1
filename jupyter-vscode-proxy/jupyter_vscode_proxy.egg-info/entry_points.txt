@@ -1,0 +1,3 @@
+[jupyter_serverproxy_servers]
+vscode = jupyter_vscode_proxy:setup_vscode
+

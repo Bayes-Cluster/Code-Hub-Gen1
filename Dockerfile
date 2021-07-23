@@ -33,12 +33,6 @@ RUN npm install -g configurable-http-proxy
 ## Install JupyterHub
 RUN pip install jupyterhub
 
-# Install proxy extension.
-RUN pip install jupyter-server-proxy==1.0.1  \
-    && jupyter serverextension enable --py jupyter_server_proxy \
-    && jupyter labextension install jupyterlab-server-proxy \
-    && jupyter lab build
-
 # Download and install VS Code server
 # NOTICE: github.com.cnpmjs.org is a reverse proxy for acclerate the release download
 RUN wget https://github.com.cnpmjs.org/cdr/code-server/releases/download/v3.11.0/code-server_3.11.0_amd64.deb
@@ -46,7 +40,11 @@ RUN dpkg -i code-server_3.11.0_amd64.deb
 RUN rm -rf code-server_3.11.0_amd64.deb
 
 # Install the VS code proxy.
-COPY jupyter-vscode-proxy /etc/jupyter-vscode-proxy
+RUN jupyter labextension install @jupyterlab/server-proxy \
+    && jupyter serverextension enable --py jupyter_server_proxy \
+    && jupyter labextension install jupyterlab-server-proxy \
+    && jupyter lab build
+COPY jupyter-vscode-proxy/ /etc/jupyter-vscode-proxy
 RUN pip install /etc/jupyter-vscode-proxy
 
 EXPOSE 8888

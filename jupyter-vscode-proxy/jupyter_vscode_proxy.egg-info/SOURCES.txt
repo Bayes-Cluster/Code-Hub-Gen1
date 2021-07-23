@@ -1,0 +1,9 @@
+setup.py
+jupyter_vscode_proxy/__init__.py
+jupyter_vscode_proxy.egg-info/PKG-INFO
+jupyter_vscode_proxy.egg-info/SOURCES.txt
+jupyter_vscode_proxy.egg-info/dependency_links.txt
+jupyter_vscode_proxy.egg-info/entry_points.txt
+jupyter_vscode_proxy.egg-info/requires.txt
+jupyter_vscode_proxy.egg-info/top_level.txt
+jupyter_vscode_proxy/icons/vscode.svg

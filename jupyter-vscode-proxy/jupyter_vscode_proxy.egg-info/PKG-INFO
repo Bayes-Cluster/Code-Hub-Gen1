@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: jupyter-vscode-proxy
+Version: 0.1
+Summary: Jupyter extension to proxy VS Code
+Home-page: https://github.com/betatim/vscode-binder
+Author: Tim Head
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: Jupyter
+Platform: UNKNOWN
+Classifier: Framework :: Jupyter
