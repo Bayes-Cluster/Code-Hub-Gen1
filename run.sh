@@ -36,8 +36,8 @@ echo "------------------------"
 echo "|install VS Code Server|"
 echo "------------------------"
 wget https://github.com.cnpmjs.org/cdr/code-server/releases/download/v3.11.0/code-server_3.11.0_amd64.deb
-RUN dpkg -i code-server_3.11.0_amd64.deb
-RUN rm -rf code-server_3.11.0_amd64.deb
+dpkg -i code-server_3.11.0_amd64.deb
+rm -rf code-server_3.11.0_amd64.deb
 
 echo "-----------------------"
 echo "|install VS Code Prosy|"
