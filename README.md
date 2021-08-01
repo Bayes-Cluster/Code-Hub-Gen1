@@ -33,19 +33,19 @@ default working directory for JupyterLab and vscode-server.
 
 ### Homepage:
 
-<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/08/01/3bz5hi6jQBaOHEc.jpg" width="40%" /></a>
+<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/08/01/3bz5hi6jQBaOHEc.jpg" width="80%" /></a>
 
 ### Spawner Option:
 
-<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/08/01/V3W9ouBheRtJv2X.jpg" width="40%" /></a>
+<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/08/01/V3W9ouBheRtJv2X.jpg" width="80%" /></a>
 
 ### Cluster Monitor:
 
-<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/08/01/WR8xCp1qJciYr54.jpg" width="40%" /></a>
+<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/08/01/WR8xCp1qJciYr54.jpg" width="80%" /></a>
 
 ### JupyterLab and Code-Server:
 
-<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/07/18/1tcj4TDWqEX7aM9.gif" width="40%" /></a>
+<a href="https://sm.ms/image/1tcj4TDWqEX7aM9" target="_blank"><img src="https://i.loli.net/2021/07/18/1tcj4TDWqEX7aM9.gif" width="80%" /></a>
 
 
 
