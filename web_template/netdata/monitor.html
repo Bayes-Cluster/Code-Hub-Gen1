@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>USBC Dashboard</title>
+        <link rel="icon" href="https://uic.edu.cn/images/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Georama:wght@200;300;400&display=swap" rel="stylesheet">
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="static/css/starter-template.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    </head>
+    <script>
+    var netdataTheme = 'default'; // white netdata theme
+    </script>
+    <script type="text/javascript" src="https://hpc.uicstat.com:8444/dashboard.js"></script>
+    <script>
+    NETDATA.options.current.destroy_on_hide = true;
+    NETDATA.options.current.eliminate_zero_dimensions = false;
+    NETDATA.options.current.concurrent_refreshes = true;
+    NETDATA.options.current.parallel_refresher = true;
+    NETDATA.options.current.stop_updates_when_focus_is_lost = false;
+    </script>
+<body>
+  <style>
+    h1 {
+        margin-left:auto;
+        margin-right:auto;
+        font-family: 'Georama', sans-serif;
+    }
+    h2 {
+        margin-left:auto;
+        margin-right:auto;
+        font-family: 'Georama', sans-serif;
+    }
+    h3 {
+      margin-left:auto;
+      margin-right:auto;
+      font-family: 'Georama', sans-serif;
+    }
+    h4 {
+        margin-left:auto;
+        margin-right:auto;
+        font-family: 'Georama', sans-serif;
+    }
+    p {
+        margin-left:auto;
+        margin-right:auto;
+        font-family: 'Georama', sans-serif;
+    }
+  </style>
+<!--<center>
+  <h1>USBC Cluster Dashboard</h1>
+</center>
+<hr />-->
+<div class="container">
+  <div class="row">
+    <h2>General</h2>
+    <div class="col-xs-2 col-md-4" align="left">
+        <div class="panel">
+    <h3> System CPU Usage</h3>
+        <h4>Computer2030005000</h4>
+                <div data-netdata="system.cpu_pressure"
+                  data-char-library="google"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005000"
+                  data-width="100%"
+                  data-height="100%">
+                </div>
+              <h4>Compute2030005001</h4>
+                <div data-netdata="system.cpu_pressure"
+                  data-char-library="google"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005001"
+                  data-width="100%"
+                  data-height="100%">
+                </div>
+                <h4>Compute2030005002</h4>
+          <div data-netdata="system.cpu_pressure"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005002"
+                  data-chart-library="dygraph"
+                  data-width="100%"
+                  data-height="100%"
+          > 
+          <!--FOR GPU: nvidia_smi.gpu0_mem_usage-->
+            </div>
+              <h4>Compute2030005003</h4>
+                <div data-netdata="system.cpu_pressure"
+                  data-char-library="google"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005003"
+                  data-width="100%"
+                  data-height="100%">
+                </div>
+          </div>
+      </div>
+  <div class="col-xs-2 col-md-4" align="left">
+      <div class="panel">
+         <h3> System Memory Usage</h3>
+            <h4>Computer2030005000</h4>
+              <div data-netdata="system.memory_full_pressure"
+                  data-char-library="google"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005000"
+                  data-width="100%"
+                  data-height="100%">
+              </div>
+            <h4>Compute2030005001</h4>
+              <div data-netdata="system.memory_full_pressure"
+                  data-char-library="google"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005001"
+                  data-width="100%"
+                  data-height="100%">
+              </div>
+              <h4>Compute2030005002</h4>
+              <div data-netdata="system.memory_full_pressure"
+                  data-host="https://hpc.uicstat.com:8444/host/Compute2030005002"
+                  data-chart-library="dygraph"
+                  data-width="100%"
+                  data-height="100%">
+                    <!--FOR GPU: nvidia_smi.gpu0_mem_usage-->
+           </div>
+            <h4>Compute2030005003</h4>
+              <div data-netdata="system.memory_full_pressure"
+                   data-char-library="google"
+                   data-host="https://hpc.uicstat.com:8444/host/Compute2030005003"
+                   data-width="100%"
+                   data-height="100%">
+              </div>
+         </div>
+     </div>
+  <div class="col-xs-2 col-md-4" align="left">
+      <div class="panel">
+         <h3> System Network Usage</h3>
+            <h4>Computer2030005000</h4>
+              <div data-netdata="system.net"
+                   data-char-library="google"
+                   data-host="https://hpc.uicstat.com:8444/host/Compute2030005000"
+                   data-width="100%"
+                   data-height="100%">
+              </div>
+            <h4>Compute2030005001</h4>
+              <div data-netdata="system.net"
+                   data-char-library="google"
+                   data-host="https://hpc.uicstat.com:8444/host/Compute2030005001"
+                   data-width="100%"
+                   data-height="100%">
+              </div>
+              <h4>Compute2030005002</h4>
+              <div data-netdata="system.net"
+                    data-host="https://hpc.uicstat.com:8444/host/Compute2030005002"
+                    data-chart-library="dygraph"
+                    data-width="100%"
+                    data-height="100%">
+                    <!--FOR GPU: nvidia_smi.gpu0_mem_usage-->
+           </div>
+            <h4>Compute2030005003</h4>
+              <div data-netdata="system.net"
+                   data-char-library="google"
+                   data-host="https://hpc.uicstat.com:8444/host/Compute2030005003"
+                   data-width="100%"
+                   data-height="100%">
+              </div>
+         </div>
+     </div>
+</div>
+</div>
+
+<!--GPU Server Status -->
+<div class="container">
+        <h2>Graphic Card Usage</h2>
+        <div class="row">
+                <div class="col-xs-2 col-md-4">
+      <h3> System Memory Usage</h3> 
+                        <h4>Compute2030005002 Card:0</h4>
+                        <div data-netdata="nvidia_smi.gpu0_mem_usage"
+                                data-char-library="google"
+                                data-host="https://hpc.uicstat.com:8444/host/Compute2030005002"
+                                data-width="100%"
+                                data_ieght="100%">
+           </div>
+               <h4>Compute2030005003 Card:0</h4>
+           <div data-netdata="nvidia_smi.gpu0_mem_usage"
+                data-char-library="google"
+                data-host="https://hpc.uicstat.com:8444/host/Compute2030005003"
+                data-width="100%"
+                data_ieght="100%">
+                   </div>
+                </div>
+                <div class="col-xs-2 col-md-4">
+      <h3>GPU Number of Users</h3> 
+                        <h4>Compute2030005002 Card:0</h4>
+                        <div data-netdata="nvidia_smi.gpu0_user_num"
+                                data-char-library="google"
+                                data-host="https://hpc.uicstat.com:8444/host/Compute2030005002"
+                                data-width="100%"
+                                data_ieght="100%">
+           </div>
+               <h4>Compute2030005003 Card:0</h4>
+           <div data-netdata="nvidia_smi.gpu0_user_num"
+                data-char-library="google"
+                data-host="https://hpc.uicstat.com:8444/host/Compute2030005003"
+                data-width="100%"
+                data_ieght="100%">
+                   </div>
+                </div>
+        </div>
+</div>
+<br>
+<hr />
+
+<footer>
+  <div class="container">
+          <center>
+          <br></br>
+          <p>This service is run transparently from <a href="https://github.com/Bayes-Cluster/Code-Hub">Bayes-Cluster/Code-Hub</a> on 
+          <a href="https://github.com>"<i class="ri-github-fill"></i></a>
+          || Copyright &copy; 2018-<script>document.write(new Date().getFullYear())</script>  
+          <a href="https://github.com/Bayes-Cluster"> Bayes Cluster Maintenance Group </a></p>
+          <br></br>
+          </center>
+  </div>
+</footer>
+
+<!-- Scripts -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://raw.githubusercontent.com/Bayes-Cluster/Bayes-Cluster.github.io/master/assets/js/script.js"></script>
+
+<!--  ===== Scroll to Top ====  -->
+<script>
+    if ($('#back-to-top').length) {
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+</script>
+
+</body>
+<script>
+  var NETDATA_BADGES_AUTOREFRESH_SECONDS = 3;
+    function refreshNetdataBadges() {
+      var now = new Date().getTime().toString();
+      $('.netdata-badge').each(function() {
+        this.src = this.src.replace(/\&_=\d*/, '') + '&_=' + now;
+      });
+      setTimeout(refreshNetdataBadges, NETDATA_BADGES_AUTOREFRESH_SECONDS * 1000);
+    }
+    setTimeout(refreshNetdataBadges, NETDATA_BADGES_AUTOREFRESH_SECONDS * 1000);
+</script>
+</html>

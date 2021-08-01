@@ -1,0 +1,192 @@
+{% extends "page.html" %}
+{% if announcement_login %}
+  {% set announcement = announcement_login %}
+{% endif %}
+
+{% block login_widget %}
+{% endblock %}
+
+
+{% block main %}
+<link href="https://fonts.googleapis.com/css?family=Georama:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+h3 {
+	margin-left:auto;
+	margin-right:auto;
+	font-family: 'Georama', sans-serif;
+}
+h4 {
+	margin-left:auto;
+	margin-right:auto;
+	font-family: 'Georama', sans-serif;
+}
+p {
+	margin-left:auto;
+	margin-right:auto;
+	font-family: 'Georama', sans-serif;	
+}
+.questions {
+    margin-bottom: 12px;
+}
+
+.questions > div {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px lightgrey dotted;
+}
+</style>
+<center>
+	<h3 class="page-header"><strong>BNU-HKBU United International College</strong> Statistics Bayes Cluster Web Portal</h3>
+</center>
+{% block login %}
+<div id="login-main" class="container">
+{% block login_container %}
+<div class="col-md-4">
+{% if custom_html %}
+{{ custom_html | safe }}
+{% elif login_service %}
+<div class="service-login">
+  <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}'>
+    Sign in with {{login_service}}
+  </a>
+</div>
+{% else %}
+<form action="{{login_url}}?next={{next}}" method="post" role="form">
+  <div class="auth-form-header">
+		  <font style="font-family: 'Georama', sans-serif;">Sign in</font>
+  </div>
+  <div class='auth-form-body'>
+
+    <p id='insecure-login-warning' class='hidden'>
+    Warning: JupyterHub seems to be served over an unsecured HTTP connection.
+    We strongly recommend enabling HTTPS for JupyterHub.
+    </p>
+
+    {% if login_error %}
+    <p class="login_error">
+      {{login_error}}
+    </p>
+    {% endif %}
+    <label for="username_input" style="font-family: 'Georama', sans-serif;">Username:</label>
+    <input
+      id="username_input"
+      type="text"
+      autocapitalize="off"
+      autocorrect="off"
+      class="form-control"
+      name="username"
+      val="{{username}}"
+      tabindex="1"
+      autofocus="autofocus"
+    />
+    <label for='password_input' style="font-family: 'Georama', sans-serif;">Password:</label>
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      id="password_input"
+      tabindex="2"
+    />
+
+    <div class="feedback-container">
+      <input
+        id="login_submit"
+        type="submit"
+        class='btn btn-jupyter'
+        value='Sign in'
+        tabindex="3"
+        />
+      <div class="feedback-widget hidden">
+        <i class="fa fa-spinner"></i>
+      </div>
+    </div>
+
+    {% block login_terms %}
+    {% if login_term_url %}
+    <div id="login_terms" class="login_terms">
+    <input type="checkbox" id="login_terms_checkbox" name="login_terms_checkbox" required />
+    {% block login_terms_text %} {# allow overriding the text #}
+    By logging into the platform you accept the <a href="{{ login_term_url }}">terms and conditions</a>.
+    {% endblock login_terms_text %}
+    </div>
+    {% endif %}
+    {% endblock login_terms %}
+
+  </div>
+</form>
+{% endif %}
+<center>
+<p></p>
+<h4 style="margin-top:2em"> Acknowledgement</h4>
+<img src="https://uic.edu.cn/img/logo.png" alt="BNU-HKBU UIC">
+<p></p>
+<img src="https://dst.uic.edu.cn/isci/dfiles/9736/templates/uic_fpil/images/isci_banner.jpg" height="100" width="300" alt="ISCI">
+<p></p>
+<img src="https://i.loli.net/2021/07/19/jkZcxzwtlYVGF7U.jpg" alt="Four Points Innovation Center">
+<p></p>
+<img src="https://i.loli.net/2021/07/19/mlAySvGfLW8ucIO.png" width="50%" alt="Statistics Programme">
+<p></p>
+<!--<img src="https://i.loli.net/2021/07/18/bQpaef2T3rhgul4.png" width="80%" alt="USBC Maintenance Group">-->
+</center>
+</div>
+
+<!-- Right  -->
+<div class="col-md-8 questions">
+	<!--What is UIC-STAT Bayes Cluster-->
+	<div>
+		<h4>What is UIC-STAT Bayes Cluster?</h4>
+		<p style="margin:2em">
+		UIC-STAT Bayes Cluster, or USBC, is the first generation high-performance
+		computing cluster, which provides high-performance computing services for
+		both students and teachers in Statistics Program. The user can run the
+		pre-built software, such as GCC, MATLAB, Anaconda etc. on the cluster.
+		The cluster brings the power of efficiency to groups of users.It gives users 
+		access to computational environments and resources without burdening the 
+		users with enviornment maintenance - and it can get their work
+    	done in their own workspaces on shared resources, which can be managed
+		efficiently by system administrators. For more information, please check our
+		<a href="https://hpc.uicstat.com:8443/wiki"> wiki </a></p>
+		<center>
+			<figure>
+				<a href="https://sm.ms/image/s3YxzCf4O6jhJPw" target="_blank"><img src="https://i.loli.net/2021/07/31/s3YxzCf4O6jhJPw.jpg" width="50%"></a>
+				<figcaption style="font-family: 'Georama', sans-serif;margin-top:0.5em"> A glance of USBC </figcaption>
+			</figure>
+		</center>
+	</div>
+	<!-- What is Web Portal-->
+	<div>
+		<h4>What is Web Portal</h4>
+		<p style="margin:2em">
+		In USBC, we use <a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a>
+		as the web Portal and the user can use a web-based
+		<a href="https://github.com/cdr/code-server">VS Code</a> as their GUI.
+    	Previously, the cluster user needs to access the Cluster via SSH, and most
+		of the users are not familiar with CLI. With this web-based system, the user
+		can intuitively access to the system can do the coding, check files, and even
+		submit, check and stop their SLURM jobs.
+		<br></br>
+		In the future, we may add an interactive cluster for GUI-based softwares (e.g. VNC, MATLAB, RStudio).
+		</p>
+	</div>
+	<!-- Who can use this service-->
+	<div>
+		<h4> Who can use this service? </h4>
+		<p style="margin:2em">
+		For now, only UIC-STAT students and researchers can apply an account, 
+		if you fullfil the requirement, after completing the 
+		<a =href="https://shimo.im/forms/JcWGhwvdGVvHtpRd/fill?channel=UICSTAT">application form</a>, we will create the account for
+		you within three weekdays.</p>
+	</div>
+	<h4>Any Question and Comment?</h4>
+		<script src="https://utteranc.es/client.js"
+        		repo="Bayes-Cluster/Issues"
+        		issue-term="og:question"
+        		label="question"
+        		theme="github-light"
+        		crossorigin="anonymous"
+        		async>
+		</script>
+{% endblock login_container %}
+</div>
+{% endblock login %}
+{% endblock %}
