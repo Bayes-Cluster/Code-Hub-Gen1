@@ -47,6 +47,6 @@ c.ProfilesSpawner.profiles = [
      ("Control Node", 'local', 'jupyterhub.spawner.LocalProcessSpawner', {'ip':'0.0.0.0'}),
      ('CPU Node [1]', 'CPU-Compute-1', 'batchspawner.SlurmSpawner', dict(req_partition='CPU-Compute-1', req_nprocs='2', req_runtime='00:30:00', req_memory='4196M')),
      ('CPU Node [2]', 'CPU-Compute-2', 'batchspawner.SlurmSpawner', dict(req_partition='CPU-Compute-2', req_nprocs='4', req_runtime='01:00:00', req_memory='8192M')),
-     ('GPU Node [1]', 'GPU-Compute-1', 'batchspawner.SlurmSpawner', dict(req_partition='GPU-Compute-1', req_nprocs='4', req_runtime='01:00:00', req_memory='8192M')),
+     ('GPU Node [1]', 'GPU-Compute-1', 'batchspawner.SlurmSpawner', dict(req_partition='GPU-Compute-1', req_nprocs='4', req_runtime='01:00:00', req_memory='8192M', req_gres='gpu:0')),
 ]
 #------------------------------------------------------------------------------
