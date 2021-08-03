@@ -83,7 +83,7 @@ echo "------------------------"
 echo "|install VS Code Server|"
 echo "------------------------"
 sleep 3s && clear
-wget https://github.com.cnpmjs.org/cdr/code-server/releases/download/v3.11.0/code-server_3.11.0_amd64.deb
+wget https://gh.api.99988866.xyz/https://github.com/cdr/code-server/releases/download/v3.11.0/code-server_3.11.0_amd64.deb
 dpkg -i code-server_3.11.0_amd64.deb
 rm -rf code-server_3.11.0_amd64.deb
 
