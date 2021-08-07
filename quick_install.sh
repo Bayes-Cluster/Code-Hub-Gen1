@@ -70,7 +70,6 @@ echo "--------------------------------"
 echo "|install cofigurable-http-proxy|"
 echo "--------------------------------"
 sleep 3s && clear
-npm config set registry https://registry.npm.taobao.org 
 npm install -g configurable-http-proxy
 
 echo "--------------------"
@@ -83,7 +82,7 @@ echo "------------------------"
 echo "|install VS Code Server|"
 echo "------------------------"
 sleep 3s && clear
-wget https://gh.api.99988866.xyz/https://github.com/cdr/code-server/releases/download/v3.11.0/code-server_3.11.0_amd64.deb
+wget https://github.com/Bayes-Cluster/code-server/releases/download/U3.11.1/code-server_3.11.1_amd64.deb
 dpkg -i code-server_3.11.0_amd64.deb
 rm -rf code-server_3.11.0_amd64.deb
 
@@ -92,4 +91,21 @@ echo "|install VS Code Prosy|"
 echo "-----------------------"
 sleep 3s && clear
 jupyter labextension install @jupyterlab/server-proxy
-pip install jupyter-vscode-proxy
+git clone https://github.com/Bayes-Cluster/Code-Hub.git
+cd Code-Hub && pip install jupyter-vscode-proxy && cd ..
+echo "------------------------"
+echo "| default configuration|"
+echo "------------------------"
+sleep 3s && clear
+pip install https://github.com/NERSC/jupyterlab-slurm/archive/refs/heads/lab3.zip
+pip install https://github.com/Bayes-Cluster/Code-Hub/archive/refs/heads/main.zip
+pip install jupyterlab-git
+
+mkdir /etc/jupyterhub/ && cp config_hub && cp Code-Hub/config_file/jhub_config.py /etc/jupyterhub/config.py
+sleep 1s && clear
+
+echo "----------------------------------------------------------"
+echo "| The JupyterHub Config is in /etc/jupyterhub/config.py   |"
+echo "| Please customize it according to your own situation.    |"
+echo "| If any question or comment, issues aare always welcome  |"
+echo "-----------------------------------------------------------"
