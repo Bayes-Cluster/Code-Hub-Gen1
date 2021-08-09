@@ -49,7 +49,7 @@ echo "-------------------------------------"
 echo "|install python preliminary pacakges|"
 echo "-------------------------------------"
 sleep 3s && clear
-pip install jupyter==1.0.0 ipywidgets==7.4.2 jupyterlab==3.0.16 tornado==6.1 \
+python -m pip install jupyter==1.0.0 ipywidgets==7.4.2 jupyterlab==3.0.16 tornado==6.1 \
 && jupyter nbextension enable --py widgetsnbextension \
 && jupyter serverextension enable --py jupyterlab
 clear
@@ -76,7 +76,7 @@ echo "--------------------"
 echo "|install jupyterhub|"
 echo "--------------------"
 sleep 3s && clear
-pip install jupyterhub
+python -m pip install jupyterhub
 
 echo "------------------------"
 echo "|install VS Code Server|"
@@ -92,14 +92,14 @@ echo "-----------------------"
 sleep 3s && clear
 jupyter labextension install @jupyterlab/server-proxy
 git clone https://github.com/Bayes-Cluster/Code-Hub.git
-cd Code-Hub && pip install jupyter-vscode-proxy && cd ..
+cd Code-Hub && python -m pip install jupyter-vscode-proxy && cd ..
 echo "------------------------"
 echo "| default configuration|"
 echo "------------------------"
 sleep 3s && clear
-pip install https://github.com/NERSC/jupyterlab-slurm/archive/refs/heads/lab3.zip
-pip install https://github.com/Bayes-Cluster/Code-Hub/archive/refs/heads/main.zip
-pip install jupyterlab-git
+python -m pip install https://github.com/NERSC/jupyterlab-slurm/archive/refs/heads/lab3.zip
+python -m pip install https://github.com/Bayes-Cluster/batchspawner/archive/refs/heads/master.zip
+python -m pip install jupyterlab-git
 
 mkdir /etc/jupyterhub/ && cp config_hub && cp Code-Hub/config_file/jhub_config.py /etc/jupyterhub/config.py
 sleep 1s && clear
@@ -108,4 +108,5 @@ echo "----------------------------------------------------------"
 echo "| The JupyterHub Config is in /etc/jupyterhub/config.py   |"
 echo "| Please customize it according to your own situation.    |"
 echo "| If any question or comment, issues aare always welcome  |"
+echo "|   --by Bayes Cluster Maintenance Group with MIT LICENSE |"
 echo "-----------------------------------------------------------"
